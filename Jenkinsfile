@@ -14,8 +14,8 @@ pipeline {
 				dependencyCheck additionalArguments: '''--format ALL
 				--out "./"
 				--scan "./"
-				--prettyPrint''', nvdApiKey: 'NVD_API_Key_1', odcInstallation: 'OWASP Dependency Check'
-				// --prettyPrint''', nvdCredentialsId: 'NVD_API_Key_1', odcInstallation: 'OWASP Dependency Check'
+				--prettyPrint''', nvdCredentialsId: 'NVD_API_Key_1', odcInstallation: 'OWASP Dependency Check'
+				// Jenkins will fail to even start if parameter is wrong
 			}
 		}
 	}	
