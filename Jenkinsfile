@@ -14,7 +14,10 @@ pipeline {
 				dependencyCheck additionalArguments: '''--format ALL
 				--out "./"
 				--scan "./"
-				--prettyPrint''', nvdCredentialsId: 'NVD_API_Key_1', odcInstallation: 'OWASP Dependency Check'
+				--prettyPrint
+				--suppression "suppression.xml"''', 
+				nvdCredentialsId: 'NVD_API_Key_1',
+				odcInstallation: 'OWASP Dependency Check'
 				// Jenkins will fail to even start if parameter is wrong
 			}
 		}
