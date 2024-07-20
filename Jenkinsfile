@@ -11,9 +11,10 @@ pipeline {
 
 		stage('OWASP DependencyCheck') {
 			steps {
-				sh "echo Begin OWASP DependencyCheck"
-				dependencyCheck additionalArguments: '--format HTML --format XML', odcInstallation: 'Default'
-				sh "echo End OWASP DependencyCheck"
+				dependencyCheck additionalArguments: '''--format ALL
+				--out "./"
+				--scan "./"
+				--prettyPrint''', nvdCredentialsId: 'NVD_API_Key_1', odcInstallation: 'OWASP Dependency Check'
 			}
 		}
 	}	
