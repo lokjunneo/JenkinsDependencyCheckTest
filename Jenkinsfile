@@ -14,7 +14,8 @@ pipeline {
 				dependencyCheck additionalArguments: '''--format ALL
 				--out "./"
 				--scan "./"
-				--prettyPrint''', nvdCredentialsId: 'NVD_API_Key_1', odcInstallation: 'OWASP Dependency Check'
+				--prettyPrint''', nvdApiKey: 'NVD_API_Key_1', odcInstallation: 'OWASP Dependency Check'
+				// --prettyPrint''', nvdCredentialsId: 'NVD_API_Key_1', odcInstallation: 'OWASP Dependency Check'
 			}
 		}
 	}	
